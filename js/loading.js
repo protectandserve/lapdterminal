@@ -7,12 +7,15 @@ var loadingPresets = {
       "BOOTING TACTICAL TERMINAL...",
       "INITIALIZING DISPLAY LAYERS...",
       "VERIFYING INTERNAL NODE INTEGRITY...",
-      "CALIBRATING SECURE RESPONSE CHANNEL...",
+      "CHECKING SECURE SUBSYSTEMS...",
+      "CALIBRATING RESPONSE CHANNEL...",
+      "MOUNTING ARCHIVE INDEX...",
+      "SYNCHRONIZING LOCAL SESSION SHELL...",
       "STANDBY SCREEN READY."
     ],
-    lineDelay: 260,
-    finalDelay: 520,
-    glitchBursts: 2
+    lineDelay: 340,
+    finalDelay: 900,
+    glitchBursts: 3
   },
 
   login: {
@@ -353,7 +356,7 @@ function triggerLoadingGlitch(overlay, bursts) {
         void overlay.offsetWidth;
         overlay.classList.add("glitch");
       }, delay);
-    })(180 + (i * 260));
+    })(220 + (i * 320));
   }
 }
 
@@ -377,8 +380,16 @@ function bootTo(index, presetName, options) {
   var lineDelay = preset.lineDelay || 90;
   var finalDelay = preset.finalDelay || 180;
   var ids = ["line1", "line2", "line3", "line4", "line5"];
-  var progress = [18, 39, 62, 84, 100];
   var currentLine = 0;
+
+  var progress = [];
+  if (lines.length <= 1) {
+    progress = [100];
+  } else {
+    for (var p = 0; p < lines.length; p++) {
+      progress.push(Math.round(((p + 1) / lines.length) * 100));
+    }
+  }
 
   if (titleEl) {
     titleEl.textContent = preset.title || "LOADING...";
@@ -409,7 +420,9 @@ function bootTo(index, presetName, options) {
       return;
     }
 
-    var el = document.getElementById(ids[currentLine]);
+    var lineId = ids[currentLine] || ids[ids.length - 1];
+    var el = document.getElementById(lineId);
+
     if (el) {
       el.textContent = lines[currentLine];
       el.classList.add("visible");
