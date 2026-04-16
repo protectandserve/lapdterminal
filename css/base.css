@@ -1,0 +1,60 @@
+:root {
+  --bg: #071019;
+  --card: #0d1823;
+  --line: #223648;
+  --line-soft: #172734;
+  --text: #d7e2ea;
+  --muted: #8f9baa;
+  --accent: #78a8d8;
+  --accent-strong: #dcecff;
+  --accent-blue: #8ec4ff;
+  --alert: #c89b64;
+  --danger: #b96b6b;
+  --shadow: rgba(0,0,0,0.42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(120,168,216,0.08), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(90,130,170,0.05), transparent 30%),
+    linear-gradient(180deg, #060d14 0%, #09121b 100%);
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: auto;
+  touch-action: manipulation;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 100% 3px;
+  opacity: 0.11;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(120,168,216,0.025), transparent 55%);
+  opacity: 0.4;
+}
