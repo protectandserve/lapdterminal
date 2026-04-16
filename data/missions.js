@@ -232,10 +232,10 @@ var missions = {
   },
 
   twin_palms: {
-    state: "ARCHIVED",
-    system: "INCIDENT FILE // TWIN PALMS // INTERNAL",
+    state: "CLOSED",
+    system: "INCIDENT FILE // TWIN PALMS // TACTICAL",
     title: "TWIN PALMS",
-    sub: "FILE // 2025 • STATE // ARCHIVED",
+    sub: "FILE // 2025 • STATE // CLOSED",
     clearance: "ACCÈS INTERNE",
     theatre: "MOTEL PÉRIPHÉRIQUE",
     risk: "ÉLEVÉ",
@@ -377,10 +377,10 @@ var missions = {
   },
 
   saint_elias: {
-    state: "RESTRICTED",
-    system: "INCIDENT FILE // SAINT ELIAS // RESTRICTED",
+    state: "ARCHIVED",
+    system: "INCIDENT FILE // SAINT ELIAS // INTERNAL",
     title: "SAINT ELIAS",
-    sub: "FILE // 2024 • STATE // RESTRICTED",
+    sub: "FILE // 2024 • STATE // ARCHIVED",
     clearance: "ACCÈS RESTREINT",
     theatre: "SITE RELIGIEUX",
     risk: "SÉVÈRE",
@@ -394,15 +394,15 @@ var missions = {
       "Stabilisation de la situation sans recours à une montée de force immédiate.",
       "Fin d’intervention après sécurisation complète du bâtiment et prise en charge du suspect."
     ],
-    outcome: "Le site a été sécurisé et l’intervention s’est achevée sans blessé civil. Restreint, le dossier est souvent évoqué pour sa charge émotionnelle particulière et pour l’équilibre rare qu’il a fallu tenir entre fermeté tactique, retenue humaine et respect du lieu.",
+    outcome: "Le site a été sécurisé et l’intervention s’est achevée sans blessé civil. Classé désormais dans les archives internes, le dossier reste consulté pour la retenue tactique qu’il a exigée et pour la manière dont l’équipe a maintenu un équilibre rare entre fermeté, gestion émotionnelle de scène et respect du lieu.",
     arrest: "SUSPECT INTERPELLÉ",
     civilian: "PERSONNES PRÉSENTES MISES EN SÉCURITÉ",
     evidence: "ARME / EFFETS PERSONNELS / NOTE MANUSCRITE",
-    review: "RESTRICTED / VALIDATION HIÉRARCHIQUE MAINTENUE",
+    review: "VALIDATION HIÉRARCHIQUE CONSERVÉE",
     dispatch: "Présence civile partielle confirmée sur site. Intervention requalifiée sensible avant engagement complet.",
     witness: "« Personne ne voulait croire que ça pouvait arriver ici. C’est peut-être pour ça que la peur a été si forte. »",
     attachment: "ANNEXE 19-S SCELLÉE // TÉMOIGNAGES HORS VERSION PUBLIABLE",
-    note: "Consultation limitée. Le cadre sensible du site et plusieurs témoignages restent hors version standard."
+    note: "Le dossier a été reclassé en archive interne après clôture complète de la revue hiérarchique."
   },
 
   winter_garden: {

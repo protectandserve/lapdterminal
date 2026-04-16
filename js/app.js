@@ -43,6 +43,10 @@ window.onload = function () {
   goTo(0);
   scrollScreenTop(0);
 
+  if (typeof initMissionArchive === "function") {
+    initMissionArchive();
+  }
+
   setTimeout(function () {
     bootTo(0, "startup", { revealVersion: false });
   }, 40);

@@ -226,17 +226,38 @@
               <div class="system-line terminal-prompt">
                 SWAT INCIDENT REGISTRY // INTERNAL TACTICAL ARCHIVE
               </div>
+
+              <div class="archive-toolbar">
+                <div class="archive-filter-row">
+                  <button type="button" class="filter-chip active" data-filter="ALL" onclick="setMissionFilter('ALL')">
+                    ALL <span id="countAll">0</span>
+                  </button>
+                  <button type="button" class="filter-chip" data-filter="CLOSED" onclick="setMissionFilter('CLOSED')">
+                    CLOSED <span id="countClosed">0</span>
+                  </button>
+                  <button type="button" class="filter-chip" data-filter="ARCHIVED" onclick="setMissionFilter('ARCHIVED')">
+                    ARCHIVED <span id="countArchived">0</span>
+                  </button>
+                  <button type="button" class="filter-chip" data-filter="RESTRICTED" onclick="setMissionFilter('RESTRICTED')">
+                    RESTRICTED <span id="countRestricted">0</span>
+                  </button>
+                </div>
+
+                <div class="archive-status-line" id="archiveStatusLine">
+                  FILTER // ALL VISIBLE
+                </div>
+              </div>
             </div>
 
             <div class="card-body screen-scroll">
 
-              <div class="archive-group">
+              <div class="archive-group mission-group" data-state-group="CLOSED">
                 <div class="archive-group-head">
                   <div class="archive-group-title">CLOSED INCIDENTS</div>
-                  <div class="archive-group-count">5 ENTRIES</div>
+                  <div class="archive-group-count">6 ENTRIES</div>
                 </div>
 
-                <div class="file" onclick="openMission('lockdown_12')">
+                <div class="file mission-file" data-state="CLOSED" onclick="openMission('lockdown_12')">
                   <div class="file-top">
                     <span>FILE // 2021 // LOCKDOWN 12</span>
                     <span class="tag tag-closed">STATE // CLOSED</span>
@@ -250,7 +271,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('harbor_nine')">
+                <div class="file mission-file" data-state="CLOSED" onclick="openMission('harbor_nine')">
                   <div class="file-top">
                     <span>FILE // 2023 // HARBOR NINE</span>
                     <span class="tag tag-closed">STATE // CLOSED</span>
@@ -264,7 +285,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('glass_hall')">
+                <div class="file mission-file" data-state="CLOSED" onclick="openMission('glass_hall')">
                   <div class="file-top">
                     <span>FILE // 2024 // GLASS HALL</span>
                     <span class="tag tag-closed">STATE // CLOSED</span>
@@ -278,7 +299,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('dead_air')">
+                <div class="file mission-file" data-state="CLOSED" onclick="openMission('dead_air')">
                   <div class="file-top">
                     <span>FILE // 2025 // DEAD AIR</span>
                     <span class="tag tag-closed">STATE // CLOSED</span>
@@ -292,7 +313,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('ivory_line')">
+                <div class="file mission-file" data-state="CLOSED" onclick="openMission('ivory_line')">
                   <div class="file-top">
                     <span>FILE // 2024 // IVORY LINE</span>
                     <span class="tag tag-closed">STATE // CLOSED</span>
@@ -305,17 +326,31 @@
                     <span>RISK // ÉLEVÉ</span>
                   </div>
                 </div>
+
+                <div class="file mission-file" data-state="CLOSED" onclick="openMission('twin_palms')">
+                  <div class="file-top">
+                    <span>FILE // 2025 // TWIN PALMS</span>
+                    <span class="tag tag-closed">STATE // CLOSED</span>
+                  </div>
+                  <h3>Arrestation délicate dans motel périphérique</h3>
+                  <p>Des chambres anonymes, des rideaux clos, et trop d’hypothèses dans trop peu d’espace.</p>
+                  <div class="file-meta">
+                    <span>CLEARANCE // ACCÈS INTERNE</span>
+                    <span>THEATRE // MOTEL PÉRIPHÉRIQUE</span>
+                    <span>RISK // ÉLEVÉ</span>
+                  </div>
+                </div>
               </div>
 
-              <div class="terminal-divider"></div>
+              <div class="terminal-divider mission-divider" data-state-group="CLOSED"></div>
 
-              <div class="archive-group">
+              <div class="archive-group mission-group" data-state-group="ARCHIVED">
                 <div class="archive-group-head">
                   <div class="archive-group-title">ARCHIVED INCIDENTS</div>
                   <div class="archive-group-count">5 ENTRIES</div>
                 </div>
 
-                <div class="file" onclick="openMission('night_warrant')">
+                <div class="file mission-file" data-state="ARCHIVED" onclick="openMission('night_warrant')">
                   <div class="file-top">
                     <span>FILE // 2022 // NIGHT WARRANT</span>
                     <span class="tag tag-archived">STATE // ARCHIVED</span>
@@ -329,7 +364,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('redline_yard')">
+                <div class="file mission-file" data-state="ARCHIVED" onclick="openMission('redline_yard')">
                   <div class="file-top">
                     <span>FILE // 2024 // REDLINE YARD</span>
                     <span class="tag tag-archived">STATE // ARCHIVED</span>
@@ -343,7 +378,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('civic_echo')">
+                <div class="file mission-file" data-state="ARCHIVED" onclick="openMission('civic_echo')">
                   <div class="file-top">
                     <span>FILE // 2023 // CIVIC ECHO</span>
                     <span class="tag tag-archived">STATE // ARCHIVED</span>
@@ -357,21 +392,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('twin_palms')">
-                  <div class="file-top">
-                    <span>FILE // 2025 // TWIN PALMS</span>
-                    <span class="tag tag-archived">STATE // ARCHIVED</span>
-                  </div>
-                  <h3>Arrestation délicate dans motel périphérique</h3>
-                  <p>Des chambres anonymes, des rideaux clos, et trop d’hypothèses dans trop peu d’espace.</p>
-                  <div class="file-meta">
-                    <span>CLEARANCE // ACCÈS INTERNE</span>
-                    <span>THEATRE // MOTEL PÉRIPHÉRIQUE</span>
-                    <span>RISK // ÉLEVÉ</span>
-                  </div>
-                </div>
-
-                <div class="file" onclick="openMission('long_march')">
+                <div class="file mission-file" data-state="ARCHIVED" onclick="openMission('long_march')">
                   <div class="file-top">
                     <span>FILE // 2023 // LONG MARCH</span>
                     <span class="tag tag-archived">STATE // ARCHIVED</span>
@@ -384,17 +405,31 @@
                     <span>RISK // MODÉRÉ</span>
                   </div>
                 </div>
+
+                <div class="file mission-file" data-state="ARCHIVED" onclick="openMission('saint_elias')">
+                  <div class="file-top">
+                    <span>FILE // 2024 // SAINT ELIAS</span>
+                    <span class="tag tag-archived">STATE // ARCHIVED</span>
+                  </div>
+                  <h3>Recherche d’individu retranché en site religieux</h3>
+                  <p>Une intervention où la retenue comptait autant que la précision tactique.</p>
+                  <div class="file-meta">
+                    <span>CLEARANCE // ACCÈS RESTREINT</span>
+                    <span>THEATRE // SITE RELIGIEUX</span>
+                    <span>RISK // SÉVÈRE</span>
+                  </div>
+                </div>
               </div>
 
-              <div class="terminal-divider"></div>
+              <div class="terminal-divider mission-divider" data-state-group="ARCHIVED"></div>
 
-              <div class="archive-group">
+              <div class="archive-group mission-group" data-state-group="RESTRICTED">
                 <div class="archive-group-head">
                   <div class="archive-group-title">RESTRICTED INCIDENTS</div>
-                  <div class="archive-group-count">5 ENTRIES</div>
+                  <div class="archive-group-count">4 ENTRIES</div>
                 </div>
 
-                <div class="file" onclick="openMission('static_breach')">
+                <div class="file mission-file" data-state="RESTRICTED" onclick="openMission('static_breach')">
                   <div class="file-top">
                     <span>FILE // 2024 // STATIC BREACH</span>
                     <span class="tag tag-restricted">STATE // RESTRICTED</span>
@@ -408,7 +443,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('blue_room')">
+                <div class="file mission-file" data-state="RESTRICTED" onclick="openMission('blue_room')">
                   <div class="file-top">
                     <span>FILE // 2025 // BLUE ROOM</span>
                     <span class="tag tag-restricted">STATE // RESTRICTED</span>
@@ -422,7 +457,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('crosswind')">
+                <div class="file mission-file" data-state="RESTRICTED" onclick="openMission('crosswind')">
                   <div class="file-top">
                     <span>FILE // 2025 // CROSSWIND</span>
                     <span class="tag tag-restricted">STATE // RESTRICTED</span>
@@ -436,21 +471,7 @@
                   </div>
                 </div>
 
-                <div class="file" onclick="openMission('saint_elias')">
-                  <div class="file-top">
-                    <span>FILE // 2024 // SAINT ELIAS</span>
-                    <span class="tag tag-restricted">STATE // RESTRICTED</span>
-                  </div>
-                  <h3>Recherche d’individu retranché en site religieux</h3>
-                  <p>Une intervention où la retenue comptait autant que la précision tactique.</p>
-                  <div class="file-meta">
-                    <span>CLEARANCE // ACCÈS RESTREINT</span>
-                    <span>THEATRE // SITE RELIGIEUX</span>
-                    <span>RISK // SÉVÈRE</span>
-                  </div>
-                </div>
-
-                <div class="file" onclick="openMission('winter_garden')">
+                <div class="file mission-file" data-state="RESTRICTED" onclick="openMission('winter_garden')">
                   <div class="file-top">
                     <span>FILE // 2025 // WINTER GARDEN</span>
                     <span class="tag tag-restricted">STATE // RESTRICTED</span>
@@ -745,7 +766,7 @@
         </div>
       </div>
 
-      <div class="version-stamp" id="versionStamp">v3.1</div>
+      <div class="version-stamp" id="versionStamp">v3.3</div>
     </div>
   </div>
 </div>
