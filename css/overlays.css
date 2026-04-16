@@ -1,4 +1,5 @@
-body.startup-lock .viewport {
+body.startup-lock .track,
+body.startup-lock .version-stamp {
   opacity: 0;
   pointer-events: none;
 }
